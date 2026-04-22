@@ -19,7 +19,7 @@ An audio separation system based on the CNN14 pre-trained model that separates t
 conda create -n cbmnet python=3.8
 conda activate cbmnet
 pip install -r requirements.txt
-2. Configuration
+### 2. Configuration
 Before training, modify the following settings in config.py:(Required) Project Path:
 python
 PROJECT_PATH = '/your/project/path'   # Change to your project root directory
@@ -45,7 +45,7 @@ python
 SI_SNR_WEIGHT = 1.0           # SI-SNR loss weight
 SPECTRAL_WEIGHT = 0.1         # Spectral loss weight
 BEE_FREQ_BAND = (150, 500)    # Target audio frequency band (Hz)
-3. Data Preparation
+### 3. Data Preparation
 The Excel file should contain three columns with audio file paths:
 mixed_audio	clean_audio	noise_audio
 /path/to/mixed_1.wav	/path/to/clean_1.wav	/path/to/noise_1.wav
@@ -53,14 +53,14 @@ mixed_audio	clean_audio	noise_audio
 mixed_audio: Mixed audio containing both bee wingbeats and cicada chorus
 clean_audio: Clean target audio (cicada chorus or bee wingbeats)
 noise_audio: Background noise audio
-4. Start Training
+### 4. Start Training
 bash
 python train.py
 During training, the following files will be generated:
 training_metrics.xlsx: Training metrics for each epoch
 training_trends.png: Visualization of training progress
 Model checkpoints saved to the paths specified in config
-🧪 Testing
+### 5.Testing
 Test Single Audio File
 bash
 python test.py --mode custom --mixed_audio /path/to/your/mixed_audio.wav
@@ -77,15 +77,15 @@ Option	Description	Default
 --excel_file	Path to Excel file (batch mode)	-
 --column_name	Column name in Excel file	mixed_audio
 --output_dir	Output directory	test_results
-📁 Code Structure
-File	Description
+## 📁 Code Structure
+### File	Description
 train.py	Main training script with model definition, loss functions, and training loop
 dataset.py	Dataset class for audio loading and preprocessing
 config.py	Configuration file with all adjustable parameters
 test.py	Testing script for single or batch audio processing
 train_process_visual.py	Training metrics visualization and analysis
 requirements.txt	Python dependencies
-📊 Model Architecture
+## 📊 Model Architecture
 The CBM-Net model consists of:
 Encoder: Cnn14 backbone (pre-trained on AudioSet) for feature extraction
 Decoder: Complex mask decoder for predicting time-frequency masks
