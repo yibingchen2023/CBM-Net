@@ -81,8 +81,7 @@ def calculate_indices_optimized(audio, sr=16000):
     
     # ACI: Acoustic Complexity Index
     def calculate_aci_from_features():
-        # Limit frequency range to bee frequency (200-8000 Hz)
-        freq_idx = np.where((freqs >= 200) & (freqs <= 8000))[0]
+        freq_idx = np.where((freqs >= 150) & (freqs <= 8000))[0]
         S_power_limited = S_power[freq_idx, :]
         
         # Calculate differences between adjacent time frames
@@ -104,7 +103,7 @@ def calculate_indices_optimized(audio, sr=16000):
     # ADI: Acoustic Diversity Index (Shannon diversity index, not normalized)
     def calculate_adi_from_features():
         # Define bee-specific frequency bands
-        min_freq, max_freq, n_bands = 200, 6000, 6
+        min_freq, max_freq, n_bands = 150, 8000, 6
         band_edges = np.logspace(np.log10(min_freq), np.log10(max_freq), n_bands + 1)
         
         band_energies = []
@@ -141,7 +140,7 @@ def calculate_indices_optimized(audio, sr=16000):
     # AEI: Acoustic Evenness Index 
     def calculate_aei_from_features():
         # Use the same frequency band division and energy calculation as ADI
-        min_freq, max_freq, n_bands = 200, 6000, 6
+        min_freq, max_freq, n_bands = 150, 8000, 6
         band_edges = np.logspace(np.log10(min_freq), np.log10(max_freq), n_bands + 1)
         
         band_energies = []
@@ -192,8 +191,7 @@ def calculate_indices_optimized(audio, sr=16000):
     
     # BI: Bioacoustic Index
     def calculate_bi_from_features():
-        # Limit to bee-specific frequency range (2000-7000 Hz, for harmonics)
-        freq_idx = np.where((freqs >= 2000) & (freqs <= 7000))[0]
+        freq_idx = np.where((freqs >= 150) & (freqs <= 8000))[0]
         
         if len(freq_idx) == 0:
             return 0.0
