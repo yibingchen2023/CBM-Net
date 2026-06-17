@@ -111,3 +111,8 @@ Test Options
 | --output_dir | Output directory | test_results |
 
 ### Dataset download link (Baidu Netdisk): https://pan.baidu.com/s/1S9JMZGx1GqIbnE4F31JgEA?pwd=9mfc
+
+### Please cite this article as: 
+
+J. Li, Y. Chen, Y. Zhao, et al., CBM-net: Automatic detection and separation of cicada chorus from bee wingbeat audios, Ecological Informatics (2024), https://doi.org/10.1016/j.ecoinf.2026.103889
+
