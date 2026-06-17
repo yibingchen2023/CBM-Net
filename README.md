@@ -114,5 +114,5 @@ Test Options
 
 ### Please cite this article as: 
 
-J. Li, Y. Chen, Y. Zhao, et al., CBM-net: Automatic detection and separation of cicada chorus from bee wingbeat audios, Ecological Informatics (2024), https://doi.org/10.1016/j.ecoinf.2026.103889
+J. Li, Y. Chen, Y. Zhao, et al., CBM-net: Automatic detection and separation of cicada chorus from bee wingbeat audios, Ecological Informatics (2026), https://doi.org/10.1016/j.ecoinf.2026.103889
 
